@@ -1,0 +1,22 @@
+---
+title: "MP4"
+author: "Dianne Caravela and Neyda Carrillo"
+date: "5/2/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(RMySQL)
+db <- dbConnect(MySQL(), 
+                host = "scidb.smith.edu", 
+                user = "mth292", 
+                password = "RememberPi", 
+                dbname = "imdb")
+knitr::opts_chunk$set(connection = db, max.print = 20)
+```
+
+```{sql}
+SELECT *
+FROM name
+```
