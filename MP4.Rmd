@@ -1,5 +1,5 @@
 ---
-title: "MP4"
+title: "Mini-Project #4: Database Querying"
 author: "Dianne Caravela and Neyda Carrillo"
 date: "5/2/2019"
 output: html_document
