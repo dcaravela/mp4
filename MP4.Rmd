@@ -1,6 +1,6 @@
 ---
 title: "Mini-Project #4: Database Querying"
-author: "Dianne Caravela and Neyda Carrillo"
+author: "Dianne Caravela, Neyda Carrillo, Fay Adan"
 date: "5/2/2019"
 output: html_document
 ---
@@ -19,4 +19,5 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 ```{sql}
 SELECT *
 FROM name
+WHERE name LIKE '%Batman%'
 ```
