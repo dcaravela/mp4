@@ -10,7 +10,7 @@ output:
     highlight: kate
     
 ---
-
+![](https://gemr.com/wp-content/uploads/2018/12/LiveActionDisney_BlogBanner.png)
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(RMySQL)
