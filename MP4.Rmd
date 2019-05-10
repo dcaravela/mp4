@@ -1,10 +1,14 @@
 ---
-title: "Mini-Project #4: Database Querying"
-author: "Dianne Caravela, Neyda Carrillo, Fay Adan"
-date: "5/2/2019"
+title: "Disney Comes to Life"
+subtitle: "MP4: Database Querying"
+author: "By: Dianne Caravela, Neyda Carrillo, Fay Adan"
+date: "May 2, 2019"
 output: 
   html_document:
     code_folding: hide
+    theme: readable
+    highlight: kate
+    
 ---
 
 ```{r setup, include=FALSE}
@@ -17,26 +21,6 @@ db <- dbConnect(MySQL(),
                 dbname = "imdb")
 knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
-
-
-```{sql connection=db}
-SELECT t.id, t.title, t.production_year, mi.info AS gross, mi2.info AS budget, 
-mii.info AS votes, mii2.info AS rating
-FROM title t
-JOIN movie_info mi ON t.id = mi.movie_id
-JOIN movie_info mi2 ON t.id = mi2.movie_id
-JOIN movie_info_idx mii ON mii.movie_id = t.id
-JOIN movie_info_idx mii2 ON mii2.movie_id = t.id
-WHERE mi.info_type_id = 107
-  AND mi2.info_type_id = 105
-  AND mii.info_type_id = 100
-  AND mii2.info_type_id = 101
-  AND mii.info > 100000
-  AND mi.info LIKE '%USA%'
-ORDER BY mii2.info desc;
-
-```
-
 
 
 
